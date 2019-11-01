@@ -1,0 +1,21 @@
+name: ibox
+version: 0.0.1
+description: 一个 Dart 实现的终端指令盒子，方便日常开发。
+homepage: http://1991th.com
+documentation: https://github.com/Pluckypan/iBox
+repository: https://github.com/Pluckypan/iBox
+authors:
+  - Plucky plucky@echo.engineer
+
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+dependencies:
+  args: ^1.5.2
+  dart_inquirer: ^1.0.0
+
+dev_dependencies:
+
+
+executables:
+  ibox: main
