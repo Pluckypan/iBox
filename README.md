@@ -84,10 +84,11 @@ registry => https://registry.npm.taobao.org/
 - 正式发布 `ibox pub -p`
 
 ## TODO
-- 修复 `ibox pub -p` 指令 
-- 读取 `pubspec.yaml` 参数,比如版本
-- 添加 `ibox` 配置文件 `ibox.config`
-- 添加 `ibox ssr -p 1991` 指令
+- [ ] 修复 `ibox pub -p` 指令 
+- [ ] 读取 `pubspec.yaml` 参数,比如版本
+- [ ] 添加 `ibox` 配置文件 `ibox.config`
+- [ ] 添加 `ibox npm --server --add` 指令,可自己配置 npm 镜像
+- [ ] 添加 `ibox ssr -p 1991` 指令
 
 ## 参考链接
 - [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)
