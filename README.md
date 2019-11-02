@@ -44,9 +44,37 @@ $ pub global list
 
 ```
 
+## 目录结构
+```
+➜  iBox git:(master) ✗ tree
+.
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── bin
+│   ├── helper.dart
+│   ├── main.dart
+│   ├── npm.dart
+│   └── pub.dart
+├── pubspec.lock
+└── pubspec.yaml
+
+1 directory, 9 files
+
+```
+
 ## npm
 
 通过 `ibox npm -s` 即可切换 `npm` 镜像,再也不需要记住哪冗长的网址
+
+```
+➜  sample ibox npm -s
+[1] https://registry.npmjs.org
+[2] https://registry.npm.taobao.org
+[✓] select a server : 2
+registry => https://registry.npm.taobao.org/
+
+```
 
 ## pub
 
@@ -54,6 +82,12 @@ $ pub global list
 
 - 发布预演 `ibox pub -l`
 - 正式发布 `ibox pub -p`
+
+## TODO
+- 修复 `ibox pub -p` 指令 
+- 读取 `pubspec.yaml` 参数,比如版本
+- 添加 `ibox` 配置文件 `ibox.config`
+- 添加 `ibox ssr -p 1991` 指令
 
 ## 参考链接
 - [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)
@@ -63,8 +97,3 @@ $ pub global list
 ## 说明
 1. iBox 目前只在 Mac 环境下进行过验证，不保证其他平台能正常运行
 2. 项目初衷只是为了熟悉 Dart 语言,理论上一些功能完全可以通过 `alias` 来 [实现](http://www.echo.engineer/FlutterCN/#/install?id=%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f) 
-
-## TODO
-1. 读取 `pubspec.yaml` 参数,比如版本
-2. 添加 `ibox` 配置文件 `ibox.config`
-3. 添加 `ibox ssr -p 1991` 指令
