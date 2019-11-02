@@ -3,12 +3,10 @@
 
 ## Feature
 ```
-
 -------------- iBox(0.0.1) --------------
 $ ibox npm -s, --server    set npm server.
 $ ibox pub -l, --lint      pub publish --dry-run.
 $ ibox pub -p, --publish   pub publish.
-
 ```
 
 ## 运行环境
@@ -30,15 +28,14 @@ $ pub global activate ibox
 [2] https://registry.npm.taobao.org
 [✓] select a server : 2
 registry => https://registry.npm.taobao.org/
-
 ```
 
 ## pub
 
 由于中国大陆访问 `pub.dev` 比较慢,所以一般情况下,都会将 `pub` 镜像设置为 ` PUB_HOSTED_URL=https://pub.flutter-io.cn` 。但是发布时,我们必须要设置回来，或者需要手动指定发布服务器比如 `pub publish --server https://pub.dev/` 但是这些都太繁琐了，`ibox` 让一切变得更简单
 
-- 发布预演 `ibox pub -l`
-- 正式发布 `ibox pub -p`
+1. 发布预演 `ibox pub -l`
+2. 正式发布 `ibox pub -p`
 
 
 ## 本地调试
@@ -63,7 +60,6 @@ $ pub global deactivate ibox
 
 # 查看所有 dart cli
 $ pub global list
-
 ```
 
 ## 目录结构
@@ -82,7 +78,6 @@ $ pub global list
 └── pubspec.yaml
 
 1 directory, 9 files
-
 ```
 
 ## TODO
@@ -96,8 +91,8 @@ $ pub global list
 - [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)
 - [Dart 开发自己的CLI](http://www.echo.engineer/FlutterCN/#/executable)
 - [Dart 语言入门](http://www.echo.engineer/FlutterCN/#/dart)
-- [Pub 官方网站](https://pub.dev/)
-- [Pub 中国网站](https://pub.flutter-io.cn/)
+- [Pub 官方站点](https://pub.dev/)
+- [Pub 中国站点](https://pub.flutter-io.cn/)
 
 ## 说明
 1. iBox 目前只在 Mac 环境下进行过验证，不保证其他平台能正常运行
