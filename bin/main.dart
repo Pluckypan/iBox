@@ -35,7 +35,7 @@ main(List<String> arguments) {
 
 String getHelperTips() {
   StringBuffer sb = StringBuffer();
-  sb.writeln("----- iBox(0.0.1) -----");
+  sb.writeln("-------------- iBox(0.0.1) --------------");
   sb.writeln("\$ ibox npm -s, --server    set npm server.");
   sb.writeln("\$ ibox pub -l, --lint      pub publish --dry-run.");
   sb.writeln("\$ ibox pub -p, --publish   pub publish.");

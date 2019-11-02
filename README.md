@@ -1,6 +1,49 @@
 # iBox
 一个 Dart 实现的终端指令盒子，方便日常开发。A Dart Command Box for Developer.
 
+## Feature
+```
+
+-------------- iBox(0.0.1) --------------
+$ ibox npm -s, --server    set npm server.
+$ ibox pub -l, --lint      pub publish --dry-run.
+$ ibox pub -p, --publish   pub publish.
+
+```
+
+## 运行环境
+当前指令需要运行在 `Dart VM` 环境下，所以需要正确安装 `Dart SDK` 和 `Pub`.这与 `nodejs` 与 `npm` 是一样的。可以参考 [链接](http://www.echo.engineer/FlutterCN/#/install) 配置你的运行环境。
+
+## Install
+```
+$ pub global activate ibox
+```
+
+## 本地调试
+如果想下载代码学习，可按以下步骤：
+
+```
+$ mkdir dart && cd dart
+$ git clone git@github.com:Pluckypan/iBox.git
+$ cd iBox
+
+# 启用 ibox
+$ pub global activate --source path $PWD
+
+# 测试 ibox
+$ ibox
+
+# 或者
+$ pub global run ibox:main
+
+# 停用 ibox
+$ pub global deactivate ibox
+
+# 查看所有 dart cli
+$ pub global list
+
+```
+
 ## npm
 
 通过 `ibox npm -s` 即可切换 `npm` 镜像,再也不需要记住哪冗长的网址
@@ -20,3 +63,8 @@
 ## 说明
 1. iBox 目前只在 Mac 环境下进行过验证，不保证其他平台能正常运行
 2. 项目初衷只是为了熟悉 Dart 语言,理论上一些功能完全可以通过 `alias` 来 [实现](http://www.echo.engineer/FlutterCN/#/install?id=%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f) 
+
+## TODO
+1. 读取 `pubspec.yaml` 参数,比如版本
+2. 添加 `ibox` 配置文件 `ibox.config`
+3. 添加 `ibox ssr -p 1991` 指令
