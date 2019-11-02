@@ -11,3 +11,12 @@
 
 - 发布预演 `ibox pub -l`
 - 正式发布 `ibox pub -p`
+
+## 参考链接
+- [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)
+- [Dart 开发自己的CLI](http://www.echo.engineer/FlutterCN/#/executable)
+- [Dart 语言入门](http://www.echo.engineer/FlutterCN/#/dart)
+
+## 说明
+1. iBox 目前只在 Mac 环境下进行过验证，不保证其他平台能正常运行
+2. 项目初衷只是为了熟悉 Dart 语言,理论上一些功能完全可以通过 `alias` 来 [实现](http://www.echo.engineer/FlutterCN/#/install?id=%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f) 
