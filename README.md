@@ -96,6 +96,8 @@ $ pub global list
 - [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)
 - [Dart 开发自己的CLI](http://www.echo.engineer/FlutterCN/#/executable)
 - [Dart 语言入门](http://www.echo.engineer/FlutterCN/#/dart)
+- [Pub 官方网站](https://pub.dev/)
+- [Pub 中国网站](https://pub.flutter-io.cn/)
 
 ## 说明
 1. iBox 目前只在 Mac 环境下进行过验证，不保证其他平台能正常运行
