@@ -2,13 +2,13 @@ part of 'main.dart';
 
 var _debug = false;
 
-setupNpm(ArgParser parser) {
+void setupNpm(ArgParser parser) {
   var command = parser.addCommand('npm');
   command.addFlag('server', abbr: 's');
   command.addFlag('version', abbr: 'v');
 }
 
-runNpm(results) {
+void runNpm(ArgResults results) {
   var command = results.command;
   _debug = results['debug'];
   if (command['server']) {
@@ -20,7 +20,7 @@ runNpm(results) {
   }
 }
 
-_changeServer() async {
+void _changeServer() async {
   List<Question> questions = [
     ListQuestion('server', 'select a server',
         ['https://registry.npmjs.org', 'https://registry.npm.taobao.org']),
@@ -35,7 +35,7 @@ _changeServer() async {
   });
 }
 
-_handleChangeServerResult() {
+void _handleChangeServerResult() {
   Process.run('npm', ['config', 'get', 'registry'])
       .then((ProcessResult results) {
     print("registry => ${Helper.output(results)}");
@@ -44,7 +44,7 @@ _handleChangeServerResult() {
   });
 }
 
-_changeVersion() async {
+void _changeVersion() async {
   List<Question> questions = [InputQuestion('version', 'input a version')];
   Prompt prompt = Prompt(questions);
   var version = (await prompt.execute())["version"];

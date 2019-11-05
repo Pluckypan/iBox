@@ -3,7 +3,7 @@
 
 ## Feature
 ```
--------------- iBox(0.0.1) --------------
+-------------- iBox(0.0.2) --------------
 $ ibox npm -s, --server    set npm server.
 $ ibox pub -l, --lint      pub publish --dry-run.
 $ ibox pub -p, --publish   pub publish.
@@ -70,14 +70,16 @@ $ pub global list
 ├── LICENSE
 ├── README.md
 ├── bin
-│   ├── helper.dart
 │   ├── main.dart
 │   ├── npm.dart
 │   └── pub.dart
+├── doc.md
+├── lib
+│   └── helper.dart
 ├── pubspec.lock
 └── pubspec.yaml
 
-1 directory, 9 files
+2 directories, 10 files
 ```
 
 ## TODO

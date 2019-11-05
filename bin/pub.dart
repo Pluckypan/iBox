@@ -1,12 +1,12 @@
 part of 'main.dart';
 
-setupPub(ArgParser parser) {
+void setupPub(ArgParser parser) {
   var command = parser.addCommand('pub');
   command.addFlag('publish', abbr: 'p');
   command.addFlag('lint', abbr: 'l');
 }
 
-runPub(results) {
+void runPub(ArgResults results) {
   var command = results.command;
   _debug = results['debug'];
   if (command['publish']) {
@@ -18,7 +18,7 @@ runPub(results) {
   }
 }
 
-_publish() {
+void _publish() {
   Process.run('pub', ['publish', '--server', 'https://pub.dev/'])
       .then((ProcessResult results) {
     print(Helper.output(results));
@@ -31,7 +31,7 @@ _publish() {
   });
 }
 
-_lint() {
+void _lint() {
   Process.run('pub', ['publish', '--dry-run']).then((ProcessResult results) {
     print(Helper.output(results));
   }).catchError((e) {
