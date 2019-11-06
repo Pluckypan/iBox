@@ -19,9 +19,16 @@ void runPub(ArgResults results) {
 }
 
 void _publish() {
-  Process.run('pub', ['publish', '--server', 'https://pub.dev/'])
-      .then((ProcessResult results) {
-    print(Helper.output(results));
+  Process.start('pub', ['publish', '--server', 'https://pub.dev/'])
+      .then((process) {
+    stdout.addStream(process.stdout);
+    stderr.addStream(process.stderr);
+    process.stdin.addStream(stdin);
+    process.exitCode.then((code) {
+      if (code == 0) {
+        print("publish success.");
+      }
+    });
   }).catchError((e) {
     if (_debug) {
       print("publish error = $e");

@@ -1,5 +1,5 @@
 name: ibox
-version: 0.0.2
+version: 0.0.3
 description: A Dart Command Box for Developer.
 homepage: http://1991th.com
 documentation: https://github.com/Pluckypan/iBox
@@ -13,6 +13,8 @@ environment:
 dependencies:
   args: ^1.5.2
   dart_inquirer: ^1.0.0
+  yaml: ^2.2.0
+  path: ^1.6.4
 
 dev_dependencies:
 

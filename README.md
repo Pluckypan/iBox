@@ -3,7 +3,7 @@
 
 ## Feature
 ```
--------------- iBox(0.0.2) --------------
+-------------- iBox($version) --------------
 $ ibox npm -s, --server    set npm server.
 $ ibox pub -l, --lint      pub publish --dry-run.
 $ ibox pub -p, --publish   pub publish.
@@ -88,10 +88,12 @@ $ pub global list
 ```
 
 ## TODO
-- [ ] 修复 `ibox pub -p` 指令 
-- [ ] 读取 `pubspec.yaml` 参数,比如版本
+- [x] 修复 `ibox pub -p` 指令 
+- [x] 读取 `pubspec.yaml` 参数,比如版本
 - [ ] 添加 `ibox` 配置文件 `ibox.config`
+- [ ] 优化 `ibox npm --server` 指令,显示当前选中
 - [ ] 添加 `ibox npm --server --add` 指令,可自己配置 npm 镜像
+- [ ] 添加 `ibox npm --server --list` 指令,列出已有 npm 镜像
 - [ ] 添加 `ibox ssr -p 1991` 指令
 - [ ] 添加 `ibox git --commit` 指令 统计贡献图、生成图形报表 、关联企业微信机器人
 - [ ] 修复只能通过 `path` 引用 `helper.dart` 的问题：源码模式下可以,但是发布后不可以

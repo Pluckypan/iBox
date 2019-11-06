@@ -1,3 +1,7 @@
+## 0.0.3
+1. 修复 `ibox pub -p` 指令 
+2. 读取 `pubspec.yaml` 参数,比如版本
+
 ## 0.0.2 
 1. 修复 `pub global activate ibox` 激活包失败的问题
 

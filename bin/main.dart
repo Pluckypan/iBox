@@ -2,12 +2,17 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:dart_inquirer/dart_inquirer.dart';
+import 'package:yaml/yaml.dart';
+import 'package:path/path.dart' as p;
 
 import '../lib/src/helper.dart';
 
 part 'npm.dart';
 
 part 'pub.dart';
+
+var _binPath = p.dirname(Platform.script.path);
+var _rootPath = p.dirname(_binPath);
 
 void main(List<String> arguments) {
   var parser = new ArgParser();
@@ -29,15 +34,26 @@ void main(List<String> arguments) {
         break;
     }
   } catch (e) {
-    print(getHelperTips());
+    getHelperTips().then(print).catchError((e) {
+      if (_debug) {
+        print(e);
+      }
+    });
   }
 }
 
-String getHelperTips() {
+Future<String> getHelperTips() async {
+  File f = new File(p.join(_rootPath, "pubspec.yaml"));
+  var yaml = await f.exists() ? await f.readAsString() : "";
+  var config = loadYaml(yaml);
   StringBuffer sb = StringBuffer();
-  sb.writeln("-------------- iBox(0.0.2) --------------");
+  if (config is Map) {
+    sb.writeln(
+        "-------------- ${config['name']}(${config['version']}) --------------");
+  }
   sb.writeln("\$ ibox npm -s, --server    set npm server.");
   sb.writeln("\$ ibox pub -l, --lint      pub publish --dry-run.");
   sb.writeln("\$ ibox pub -p, --publish   pub publish.");
+
   return sb.toString();
 }
