@@ -17,6 +17,11 @@ $ ibox pub -p, --publish   pub publish.
 $ pub global activate ibox
 ```
 
+## 从 github 安装
+```
+$ pub global activate --source git https://github.com/Pluckypan/iBox.git
+```
+
 
 ## npm
 
@@ -89,6 +94,7 @@ $ pub global list
 - [ ] 添加 `ibox npm --server --add` 指令,可自己配置 npm 镜像
 - [ ] 添加 `ibox ssr -p 1991` 指令
 - [ ] 添加 `ibox git --commit` 指令 统计贡献图、生成图形报表 、关联企业微信机器人
+- [ ] 修复只能通过 `path` 引用 `helper.dart` 的问题：源码模式下可以,但是发布后不可以
 
 ## 参考链接
 - [Pub 包管理](http://www.echo.engineer/FlutterCN/#/package)

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:dart_inquirer/dart_inquirer.dart';
 
-import '../lib/helper.dart';
+import '../lib/src/helper.dart';
 
 part 'npm.dart';
 
