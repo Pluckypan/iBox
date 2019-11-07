@@ -90,6 +90,7 @@ $ pub global list
 ## TODO
 - [x] 修复 `ibox pub -p` 指令 
 - [x] 读取 `pubspec.yaml` 参数,比如版本
+- [x] 修复 `pubspec.yaml` BUG：路径不对
 - [ ] 添加 `ibox` 配置文件 `ibox.config`
 - [ ] 优化 `ibox npm --server` 指令,显示当前选中
 - [ ] 添加 `ibox npm --server --add` 指令,可自己配置 npm 镜像

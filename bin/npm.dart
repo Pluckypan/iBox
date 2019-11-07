@@ -31,16 +31,16 @@ void _changeServer() async {
       .then((ProcessResult results) {
     _handleChangeServerResult();
   }).catchError((e) {
-    print("command npm not found.");
+    print(red.wrap("command npm not found."));
   });
 }
 
 void _handleChangeServerResult() {
   Process.run('npm', ['config', 'get', 'registry'])
       .then((ProcessResult results) {
-    print("registry => ${Helper.output(results)}");
+    print(green.wrap("registry => ${Helper.output(results)}"));
   }).catchError((e) {
-    print("command npm not found.");
+    print(red.wrap("command npm not found."));
   });
 }
 

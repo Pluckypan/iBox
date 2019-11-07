@@ -26,14 +26,14 @@ void _publish() {
     process.stdin.addStream(stdin);
     process.exitCode.then((code) {
       if (code == 0) {
-        print("publish success.");
+        print(green.wrap("publish success."));
       }
     });
   }).catchError((e) {
     if (_debug) {
-      print("publish error = $e");
+      print(red.wrap("publish error = $e"));
     } else {
-      print("command pub not found.");
+      print(red.wrap("command pub not found."));
     }
   });
 }
@@ -43,9 +43,9 @@ void _lint() {
     print(Helper.output(results));
   }).catchError((e) {
     if (_debug) {
-      print("lint error = $e");
+      print(red.wrap("lint error = $e"));
     } else {
-      print("command pub not found.");
+      print(red.wrap("command pub not found."));
     }
   });
 }

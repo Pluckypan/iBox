@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:dart_inquirer/dart_inquirer.dart';
+import 'package:io/ansi.dart';
 import 'package:yaml/yaml.dart';
 import 'package:path/path.dart' as p;
 
@@ -23,7 +24,7 @@ void main(List<String> arguments) {
     var results = parser.parse(arguments);
     var debug = results['debug'];
     if (debug) {
-      print("current mode = debug");
+      print(yellow.wrap("current mode = debug"));
     }
     switch (results.command.name) {
       case 'npm':
@@ -34,26 +35,42 @@ void main(List<String> arguments) {
         break;
     }
   } catch (e) {
-    getHelperTips().then(print).catchError((e) {
-      if (_debug) {
-        print(e);
-      }
-    });
+    print(getHelperTips());
   }
 }
 
-Future<String> getHelperTips() async {
-  File f = new File(p.join(_rootPath, "pubspec.yaml"));
-  var yaml = await f.exists() ? await f.readAsString() : "";
-  var config = loadYaml(yaml);
+String getHelperTips() {
+  String version = getVersion();
   StringBuffer sb = StringBuffer();
-  if (config is Map) {
-    sb.writeln(
-        "-------------- ${config['name']}(${config['version']}) --------------");
-  }
+  sb.writeln(
+      "-------------- iBox${version != null ? '(' + version + ')' : ''} --------------");
   sb.writeln("\$ ibox npm -s, --server    set npm server.");
   sb.writeln("\$ ibox pub -l, --lint      pub publish --dry-run.");
   sb.writeln("\$ ibox pub -p, --publish   pub publish.");
-
   return sb.toString();
+}
+
+String getVersion() {
+  try {
+    File f = File(p.join(_rootPath, "pubspec.yaml"));
+    if (f.existsSync()) {
+      var yaml = f.readAsStringSync();
+      var config = loadYaml(yaml);
+      return (config is Map) ? config['version'] : null;
+    } else {
+      var lockF = File(p.join(_rootPath, "pubspec.lock"));
+      if (lockF.existsSync()) {
+        var yaml = lockF.readAsStringSync();
+        var config = loadYaml(yaml);
+        return (config is Map) ? config['packages']['ibox']['version'] : null;
+      } else {
+        return null;
+      }
+    }
+  } catch (e) {
+    if (_debug) {
+      print(red.wrap("$e"));
+    }
+    return null;
+  }
 }
