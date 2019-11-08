@@ -1,5 +1,5 @@
 # iBox
-一个 Dart 实现的终端指令盒子，方便日常开发。A Dart Command Box for Developer.
+一个 Dart 实现的终端指令盒子，简化一些常用指令，方便日常开发。A Dart Command Box for Developer.
 
 ## Feature
 ```
@@ -91,6 +91,7 @@ $ pub global list
 - [x] 修复 `ibox pub -p` 指令 
 - [x] 读取 `pubspec.yaml` 参数,比如版本
 - [x] 修复 `pubspec.yaml` BUG：路径不对
+- [x] 修复 pub.dev 修改建议 
 - [ ] 添加 `ibox` 配置文件 `ibox.config`
 - [ ] 优化 `ibox npm --server` 指令,显示当前选中
 - [ ] 添加 `ibox npm --server --add` 指令,可自己配置 npm 镜像
