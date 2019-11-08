@@ -1,7 +1,7 @@
 name: ibox
-version: 1.0.0
+version: 1.0.1
 description: >-
-  一个 Dart 实现的终端指令盒子，简化一些常用指令，方便日常开发。A Dart Command Box for Developer.
+  A Dart Command Box for Developer.Helper you use `npm`,`pub` and so on...
 homepage: https://github.com/Pluckypan/iBox
 documentation: https://github.com/Pluckypan/iBox
 repository: https://github.com/Pluckypan/iBox
